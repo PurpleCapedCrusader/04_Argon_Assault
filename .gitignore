@@ -2,6 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
+
+/Assets/NaturalTilingTextures/
+/Assets/SampleScenes/
+/Assets/SkyBox Volume 2/
+/Assets/StarSparrow/
+
+/Assets/Standard Assets/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -42,13 +49,17 @@ ExportedObj/
 *.booproj
 *.svd
 *.pdb
+*.png
+*.mat
 *.mdb
 *.opendb
 *.VC.db
 
 # Unity3D generated meta files
 *.pidb.meta
+*.mat.meta
 *.pdb.meta
+*.png.meta
 *.mdb.meta
 
 # Unity3D generated file on crash reports
