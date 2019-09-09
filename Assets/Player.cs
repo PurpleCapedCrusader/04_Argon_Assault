@@ -15,5 +15,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         float horizontalThrow = CrossPlatformInputManager.GetAxis("Horizontal");
+        print(horizontalThrow);
+
+        float verticalThrow = CrossPlatformInputManager.GetAxis("Vertical");
+        print(verticalThrow);
     }
 }
