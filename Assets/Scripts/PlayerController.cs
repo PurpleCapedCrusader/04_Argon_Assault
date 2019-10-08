@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    [Header("General")]
     [Tooltip("In ms^-1")] [SerializeField] float xSpeed = 40f;
     [Tooltip("In ms^-1")] [SerializeField] float ySpeed = 30f;
     [Tooltip("Meters/Second")] [SerializeField] float xRange = 13f;
     [Tooltip("Meters/Second")] [SerializeField] float yRange = 8.5f;
+
+    [Header("Screen-position Based")]
     [SerializeField] float positionPitchFactor = -1.5f;
-    [SerializeField] float controlPitchFactor = -15f;
     [SerializeField] float positionYawFactor = 1f;
+
+    [Header("Control-throw Based")]
+    [SerializeField] float controlPitchFactor = -15f;
     [SerializeField] float controlRollFactor = -30f;
     float xThrow, yThrow, zThrow;
+    bool isControlEnabled = true;
 
     void Start()
     {
@@ -23,9 +29,19 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        processTranslation();
-        processRotation();
+        if (isControlEnabled)
+        {
+            processTranslation();
+            processRotation();
+        }
     }
+
+    private void OnPlayerDeath() //called by string reference from #CollisionHandler
+    {
+        print("PlayerController.OnPlayerDeath - freeze controls");
+        isControlEnabled = false;
+    }
+
     private void processRotation()
     {
         float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;

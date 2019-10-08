@@ -10,8 +10,14 @@ public class CollisionHandler : MonoBehaviour
         
     }
 
-     void OnTriggerEnter(Collider other) {
-        print("Player Triggered something");
+    void OnTriggerEnter(Collider other)
+    {
+        StartDeathSequence();
+    }
+    private void StartDeathSequence()
+    {
+        print("CollisionHandler.StartDeathSequence");
+        SendMessage("OnPlayerDeath");
     }
     // Update is called once per frame
     void Update()
