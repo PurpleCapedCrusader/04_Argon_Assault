@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        addNonTriggerBoxCollider();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void addNonTriggerBoxCollider()
     {
-        
+        Collider enemyShipBoxCollider = gameObject.AddComponent<BoxCollider>();
+        enemyShipBoxCollider.isTrigger = false;
     }
 
     void OnParticleCollision(GameObject other)
     {
         print("Particles collided with emeny" + gameObject.name);
+        Destroy(gameObject);
     }
 }
