@@ -8,12 +8,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        addNonTriggerBoxCollider();
-    }
-
-    private void addNonTriggerBoxCollider()
-    {
-        Collider enemyShipBoxCollider = gameObject.AddComponent<BoxCollider>();
+       Collider enemyShipBoxCollider = gameObject.AddComponent<BoxCollider>();
         enemyShipBoxCollider.isTrigger = false;
     }
 
