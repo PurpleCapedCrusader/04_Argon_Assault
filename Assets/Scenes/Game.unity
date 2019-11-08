@@ -354,13 +354,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 804874009, guid: 9aaf91c8e377e493e8ecf293cc5bccb2, type: 3}
       propertyPath: m_Name
-      value: Bullets Right
+      value: Gun Right
       objectReference: {fileID: 0}
     - target: {fileID: 8232770580120868492, guid: 9aaf91c8e377e493e8ecf293cc5bccb2,
         type: 3}
       propertyPath: m_Name
-      value: Bullets Left
+      value: Gun Left
       objectReference: {fileID: 0}
+    - target: {fileID: 8232770580120868492, guid: 9aaf91c8e377e493e8ecf293cc5bccb2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222097650452034248, guid: 9aaf91c8e377e493e8ecf293cc5bccb2,
+        type: 3}
+      propertyPath: guns.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222097650452034248, guid: 9aaf91c8e377e493e8ecf293cc5bccb2,
+        type: 3}
+      propertyPath: guns.Array.data[0]
+      value: 
+      objectReference: {fileID: 803194716}
+    - target: {fileID: 9222097650452034248, guid: 9aaf91c8e377e493e8ecf293cc5bccb2,
+        type: 3}
+      propertyPath: guns.Array.data[1]
+      value: 
+      objectReference: {fileID: 473015831}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aaf91c8e377e493e8ecf293cc5bccb2, type: 3}
 --- !u!1 &185250193 stripped
@@ -383,6 +403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 4582599810026890799, guid: ab61e8072931bf0409a2e235899e98bd, type: 3}
   parent: {fileID: 2125271639}
+  scorePerHit: 12
 --- !u!1 &188519343
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 4582599810026890799, guid: ab61e8072931bf0409a2e235899e98bd, type: 3}
   parent: {fileID: 2125271639}
+  scorePerHit: 50
 --- !u!1001 &400083075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -618,6 +640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 4582599810026890799, guid: ab61e8072931bf0409a2e235899e98bd, type: 3}
   parent: {fileID: 2125271639}
+  scorePerHit: 50
 --- !u!4 &431072401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7812547733865855283, guid: 8cc6b05198d3c4d74b51e06f7fba2996,
@@ -693,6 +716,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 3}
+--- !u!1 &473015831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 804874009, guid: 9aaf91c8e377e493e8ecf293cc5bccb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 178434115}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &524337893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1043,6 +1072,12 @@ Transform:
   m_Father: {fileID: 881953743}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 109.757}
+--- !u!1 &803194716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8232770580120868492, guid: 9aaf91c8e377e493e8ecf293cc5bccb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 178434115}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &839420285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,6 +1343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 4582599810026890799, guid: ab61e8072931bf0409a2e235899e98bd, type: 3}
   parent: {fileID: 2125271639}
+  scorePerHit: 12
 --- !u!1 &1227542913 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1238095480485456, guid: bf374732b0ea2c34daa340dc2de7f746,
@@ -1328,6 +1364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 4582599810026890799, guid: ab61e8072931bf0409a2e235899e98bd, type: 3}
   parent: {fileID: 2125271639}
+  scorePerHit: 100
 --- !u!4 &1296739912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8160729681571862415, guid: 9aaf91c8e377e493e8ecf293cc5bccb2,
@@ -1953,7 +1990,7 @@ GameObject:
   - component: {fileID: 1956719522}
   - component: {fileID: 1956719524}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Score Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2032,7 +2069,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f815b63b7998eb64194139d6eae79ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scorePerHit: 12
 --- !u!1001 &1957784917
 PrefabInstance:
   m_ObjectHideFlags: 0

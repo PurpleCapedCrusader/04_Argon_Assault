@@ -15,8 +15,8 @@ public class ScoreBoard : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
-    public void ScoreHit(int score) {
-        score = score + scorePerHit;
+    public void ScoreHit(int scoreIncrease) {
+        score = score + scoreIncrease;
         scoreText.text = score.ToString();
     }
     // Update is called once per frame
