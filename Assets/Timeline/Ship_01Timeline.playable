@@ -15,8 +15,8 @@ MonoBehaviour:
   m_NextId: 0
   m_Tracks:
   - {fileID: 114798940653007058}
-  - {fileID: 114618517829315640}
   - {fileID: 114698546485440058}
+  - {fileID: 114618517829315640}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
